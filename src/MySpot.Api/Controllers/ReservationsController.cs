@@ -14,7 +14,7 @@ public class ReservationsController : ControllerBase
     [HttpGet]
     public ActionResult<Reservation[]> Get()
     {
-        return Ok(_service.GetAll());
+        return Ok(_service.GetAllWeekly());
     }
 
     [HttpGet("{id:int}")]
