@@ -20,10 +20,10 @@ public class WeeklyParkingSpot
         To = to;
     }
 
-    public void AddReservation(Reservation reservation)
+    public void AddReservation(Reservation reservation, DateTime now)
     {
         var isInvalidDate = reservation.Date.Date < From || reservation.Date.Date > To ||
-                            reservation.Date.Date < DateTime.UtcNow.Date;
+                            reservation.Date.Date < now;
         if (isInvalidDate)
         {
             throw new InvalidReservationDateException(reservation.Date);

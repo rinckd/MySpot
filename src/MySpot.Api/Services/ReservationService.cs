@@ -9,15 +9,20 @@ public sealed class ReservationService
 {
     private static WeeklyParkingSpot[] _weeklyParkingSpots =
     {
-        new(Guid.Parse("00000000-0000-0000-0000-000000000001"), DateTime.UtcNow.AddDays(-5), DateTime.UtcNow.AddDays(2),
+        new(Guid.Parse("00000000-0000-0000-0000-000000000001"), new Clock().Current().AddDays(-5),
+            new Clock().Current().AddDays(2),
             "P1"),
-        new(Guid.Parse("00000000-0000-0000-0000-000000000002"), DateTime.UtcNow.AddDays(-5), DateTime.UtcNow.AddDays(2),
+        new(Guid.Parse("00000000-0000-0000-0000-000000000002"), new Clock().Current().AddDays(-5),
+            new Clock().Current().AddDays(2),
             "P2"),
-        new(Guid.Parse("00000000-0000-0000-0000-000000000003"), DateTime.UtcNow.AddDays(-5), DateTime.UtcNow.AddDays(2),
+        new(Guid.Parse("00000000-0000-0000-0000-000000000003"), new Clock().Current().AddDays(-5),
+            new Clock().Current().AddDays(2),
             "P3"),
-        new(Guid.Parse("00000000-0000-0000-0000-000000000004"), DateTime.UtcNow.AddDays(-5), DateTime.UtcNow.AddDays(2),
+        new(Guid.Parse("00000000-0000-0000-0000-000000000004"), new Clock().Current().AddDays(-5),
+            new Clock().Current().AddDays(2),
             "P4"),
-        new(Guid.Parse("00000000-0000-0000-0000-000000000005"), DateTime.UtcNow.AddDays(-5), DateTime.UtcNow.AddDays(2),
+        new(Guid.Parse("00000000-0000-0000-0000-000000000005"), new Clock().Current().AddDays(-5),
+            new Clock().Current().AddDays(2),
             "P5"),
     };
 
@@ -45,7 +50,7 @@ public sealed class ReservationService
 
         var reservation = new Reservation(reservationId, employeeName, licensePlate, date);
 
-        weeklyParkingSpot.AddReservation(reservation);
+        weeklyParkingSpot.AddReservation(reservation, new Clock().Current());
         return reservation.Id;
     }
 
