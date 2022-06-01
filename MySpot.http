@@ -10,7 +10,7 @@ GET {{url}}/reservations
 ###
 
 
-GET {{url}}/reservations/1
+GET {{url}}/reservations/055de208-ba09-4398-84cc-8daac81b01f6
 
 ###
 
@@ -18,13 +18,14 @@ POST {{url}}/reservations
 Content-Type: application/json
 
 {
-    "parkingSpotName": "P2",
+    "parkingSpotId": "00000000-0000-0000-0000-000000000001",
+    "date": "2022-06-02",
     "employeeName": "Joe Dough",
     "licensePlate": "abc-123"
 }
 
 ###
-PUT {{url}}/reservations/1
+PUT {{url}}/reservations/055de208-ba09-4398-84cc-8daac81b01f6
 Content-Type: application/json
 
 {

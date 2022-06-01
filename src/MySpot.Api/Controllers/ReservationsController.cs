@@ -19,7 +19,7 @@ public class ReservationsController : ControllerBase
         return Ok(_service.GetAllWeekly());
     }
 
-    [HttpGet("{id:int}")]
+    [HttpGet("{id:Guid}")]
     public ActionResult<ReservationDto> Get(Guid id)
     {
         var reservation = _service.Get(id);
@@ -42,7 +42,7 @@ public class ReservationsController : ControllerBase
         return CreatedAtAction(nameof(Get), new {Id = id}, default);
     }
 
-    [HttpPut("{id:guid}")]
+    [HttpPut("{id:Guid}")]
     public ActionResult<Reservation> Put(Guid id, ChangeReservationLicensePlate command)
     {
         var succeeded = _service.Update(command with { ReservationId = id });
@@ -54,7 +54,7 @@ public class ReservationsController : ControllerBase
     }
     
 
-    [HttpDelete("{id:guid}")]
+    [HttpDelete("{id:Guid}")]
     public ActionResult Delete(Guid id)
     {
         var succeeded = _service.Delete(new DeleteReservation(id));
