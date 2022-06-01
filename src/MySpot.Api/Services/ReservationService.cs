@@ -1,7 +1,7 @@
 ﻿using MySpot.Api.Commands;
 using MySpot.Api.DTO;
 using MySpot.Api.Entities;
-using MySpot.Api.Models;
+ 
 
 namespace MySpot.Api.Services;
 

@@ -1,4 +1,4 @@
-﻿namespace MySpot.Api.Models;
+﻿namespace MySpot.Api.Entities;
 
 public class Reservation
 {
@@ -18,7 +18,7 @@ public class Reservation
 
     public void ChangeLicensePlate(string licensePlate)
     {
-        if (!string.IsNullOrEmpty(licensePlate))
+        if (!string.IsNullOrEmpty(licensePlate) || licensePlate.Length is < 5 or > 8)
         {
             return;
         }
