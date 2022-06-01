@@ -10,7 +10,7 @@ GET {{url}}/reservations
 ###
 
 
-GET {{url}}/reservations/055de208-ba09-4398-84cc-8daac81b01f6
+GET {{url}}/reservations/f649abd5-8934-44fe-85ce-ae1008c61b99
 
 ###
 
@@ -25,7 +25,7 @@ Content-Type: application/json
 }
 
 ###
-PUT {{url}}/reservations/055de208-ba09-4398-84cc-8daac81b01f6
+PUT {{url}}/reservations/f649abd5-8934-44fe-85ce-ae1008c61b99
 Content-Type: application/json
 
 {
